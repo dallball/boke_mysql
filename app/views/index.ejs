@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%include ./common/head.ejs%>
+<style>
+	body{background: url(/images/indexbg.jpg);}
+	.index-box{ height: 400px; width: 500px;position: fixed; left: 50%; top: 50%; margin-left: -250px; margin-top: -200px; border-radius: 8px; overflow: hidden;}
+	.index-box-content{position: absolute; z-index: 3;}
+	.content-head{}
+	.content-body{}
+	.content-foot{}
+</style>
+</head>
+<body>
+    <div class="index-box">
+    	<div class="index-box-content color-fff">
+    		<h2 class="content-head border-bottom">欢迎来到CanSing的小站</h2>
+    		<div class="content-body mt-20 mb-20"><a href="/main" class="color-fff">进入小站>></a></div>
+    		<div class="content-foot color-fff"><a href="/contact" class="color-fff">联系我</a></div>
+    	</div>
+    </div>
+</body>
+<%include ./common/script.ejs%>
+</html>

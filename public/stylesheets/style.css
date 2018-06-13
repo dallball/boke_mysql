@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+html{font-size: 62.5%}
+body{font-size: 1.6rem; font-family: "Helvetica Neue","Microsofe YaHei",Helvetica,Arial,sans-serif; color: #333; background-color: #f5f5d5;}
+/*layer修改*/
+.layui-m-layerbtn{border-color: #eee !important;}
+.layui-m-layerbtn span[no] {border-color: #eee !important;}
+.layui-m-layerbtn span[yes] {color: #ee3e40 !important;}
+/*bootstrap 修改*/
+ul{list-style: none;padding-left: 0; margin-bottom: 0;}
+dl{margin-bottom: 0;}
+em{font-style: normal;}
+table.table{margin-bottom: 0;}
+a{color: #333;}
+/*a:visited{color: #333; text-decoration: none;}*/
+a:hover{color: #f90; text-decoration: none;}
+a:active{color: #f90; text-decoration: none;}
+a:focus{color: #f90; text-decoration: none;}
+.form-group{margin-bottom: 10px;}
+.form-control{box-shadow: none;}
+.form-control:focus{box-shadow: none;}
+input{ border-color: #ddd; border-radius: 2px;}
+.btn{border-radius: 2px;}
+.has-success .form-control{border-color:#61c130;}
+.has-success .form-control:focus{box-shadow: none;border-color:#61c130;}
+.has-error .form-control{border-color:#ee3e40;}
+.has-error .form-control:focus{box-shadow: none;border-color:#ee3e40;}
+
+/*字色*/
+.color-fff, a.color-fff{color: #fff;}
+.color-333, a.color-333{color: #333;}
+.color-666, a.color-666{color: #666;}
+.color-999, a.color-999{color: #999;}
+.color-orange, a.color-orange{color: #fa6800}
+.color-red, a.color-red{color: #ee3e40;}
+.color-green, a.color-green{color: #61c130}
+
+/*背景*/
+.bg-fff{background-color: #fff;}
+.bg-gray{ background-color: #f0f0f0; }
+
+/*字大小*/
+.fs-10{font-size: 1rem;}
+.fs-11{font-size: 1.1rem;}
+.fs-12{font-size: 1.2rem;}
+.fs-13{font-size: 1.3rem;}
+.fs-14{font-size: 1.4rem;}
+.fs-15{font-size: 1.5rem;}
+.fs-16{font-size: 1.6rem;}
+.fs-18{font-size: 1.8rem;}
+.fs-20{font-size: 2rem;}
+.fs-22{font-size: 2.2rem;}
+.fs-24{font-size: 2.4rem;}
+
+/*字粗细*/
+.fw-100{font-weight: 100;}
+.fw-400{font-weight: 400;}
+.fw-500{font-weight: 500;}
+.fw-600{font-weight: 600;}
+.fw-700{font-weight: 700;}
+
+/*图片*/
+.img-block{max-width: 100%; display: block;}
+
+/*字数控制*/
+.text-ellips{overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+
+/*外边距*/
+.m-0{margin: 0;}
+.mt-5{margin-top: 5px;}
+.mb-5{margin-bottom: 5px;}
+.mr-5{margin-right: 5px;}
+.ml-5{margin-left: 5px;}
+.mt-10{margin-top: 10px;}
+.mr-10{margin-right: 10px;}
+.mb-10{margin-bottom: 10px;}
+.ml-10{margin-left: 10px;}
+.mt-15{margin-top: 15px;}
+.mr-15{margin-right: 15px;}
+.mb-15{margin-bottom: 15px;}
+.ml-15{margin-left: 15px;}
+.mt-20{margin-top: 20px !important;}
+.mr-20{margin-right: 20px;}
+.mb-20{margin-bottom: 20px;}
+.ml-20{margin-left: 20px;}
+.mt-25{margin-top: 25px;}
+.mr-25{margin-right: 25px;}
+.mb-25{margin-bottom: 25px;}
+.ml-25{margin-left: 25px;}
+.mt-30{margin-top: 30px;}
+.mr-30{margin-right: 30px;}
+.mb-30{margin-bottom: 30px;}
+.ml-30{margin-left: 30px;}
+.mt-40{margin-top: 40px;}
+.mr-40{margin-right: 40px;}
+.mb-40{margin-bottom: 40px;}
+.ml-40{margin-left: 40px;}
+.mt-50{margin-top: 50px;}
+.mr-50{margin-right: 50px;}
+.mb-50{margin-bottom: 50px;}
+.ml-50{margin-left: 50px;}
+
+/*内边距*/
+.p-0{padding: 0;}
+.pt-5{padding-top: 5px;}
+.pr-5{padding-right: 5px;}
+.pb-5{padding-bottom: 5px;}
+.pl-5{padding-left: 5px;}
+.pt-10{padding-top: 10px;}
+.pr-10{padding-right: 10px;}
+.pb-10{padding-bottom: 10px;}
+.pl-10{padding-left: 10px;}
+.pt-15{padding-top: 15px;}
+.pr-15{padding-right: 15px;}
+.pb-15{padding-bottom: 15px;}
+.pl-15{padding-left: 15px;}
+.pt-20{padding-top: 20px;}
+.pr-20{padding-right: 20px;}
+.pb-20{padding-bottom: 20px;}
+.pl-20{padding-left: 20px;}
+.pt-50{padding-top: 50px;}
+.pr-50{padding-right: 50px;}
+.pb-50{padding-bottom: 50px;}
+.pl-50{padding-left: 50px;}
+
+/*按钮*/
+.btn-white{background-color: #fff; border-color: #fff; color:#fff !important;}
+.btn-success{background-color: #61C130; border-color: #61C130; color: #fff !important;}
+.btn-warning{background-color: #fa6800; border-color: #fa6800; color: #fff !important;}
+.btn-gray{background-color: #ededed; border-color: #ededed;}
+.btn-danger{background-color: #ee3e40; border-color: #ee3e40;}
+.btn-outlined{background-color: transparent;}
+.btn-md{line-height: 26px; height: 40px;font-size: 1.6rem;}
+.btn-lg{ height: 50px; line-height: 30px; font-size: 1.8rem;}
+.btn-radius{border-radius: 2rem;}
+.btn-shadow{box-shadow: 1px 1px 1px #aaa;}
+
+/*输入框*/
+.input-md{height: 40px;}
+.input-lg{height: 50px; font-size: 1.4rem; border-radius: 2px;}
+
+/*边线*/
+.border{border: 1px solid #ddd;}
+.border-left{border-left: 1px solid #ddd;}
+.border-right{border-right: 1px solid #ddd;}
+.border-top{border-top: 1px solid #ddd;}
+.border-bottom{border-bottom: 1px solid #ddd;}
+
+/*验证*/
+.form-group{position: relative;}
+
+

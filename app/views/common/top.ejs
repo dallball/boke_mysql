@@ -1,0 +1,41 @@
+<div class="topbar">
+	<div class="container border-bottom">
+		<div class="row">
+			<div class="col-sm-6 pt-5"><a href="/">返回初始页</a></div>
+			<div class="col-sm-6 pull-right">
+				<ul class="list-inline text-right pt-5 pb-5">
+					<% if(user){%>
+						<li>你好，<a href="/user/user/<%= user.id%>"><%= user.user_name%></a></li>
+						<li><a href="/user/write">写博文</a></li>
+						<li><a href="/user/signout">退出</a></li>
+					<%} else {%>
+						<li><a href="/user/write">写博文</a></li>
+						<li><a href="/user/signin">登录</a></li>
+						<li><a href="/user/signup">注册</a></li>
+					<%}%>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top">
+	<div class="container border-bottom ">
+		<div class="top-content pt-20 pb-20">
+    		<div class="row">
+    			<div class="col-sm-3"><a href="/main">CanSing的小站</a></div>
+    			<div class="col-sm-5">
+    				<form class="form-inline" method="GET" action="/search">
+    				  <div class="form-group">
+    				      <input type="text" class="form-control" name="searchTxt" value="<%-locals.searchKey?searchKey:''%>" placeholder="输入内容按Enter">
+    				  </div>
+    				  <select class="form-control" name="searchType">
+    				    <option value="artical" <%-locals.showType==='blog'?'selected':'' %>>搜文章</option>
+    				    <option value="author" <%-locals.showType==='user'?'selected':'' %>>搜作者</option>
+    				  </select>
+    				</form>
+    			</div>
+    			<div class="col-sm-4"></div>
+    		</div>
+		</div>
+	</div>
+</div>

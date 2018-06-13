@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%include ../common/head.ejs%>
+</head>
+<body>
+	<%include ../common/top.ejs%>
+	<div class="container">
+		<h3><%= category.category_name%>分类</h3>
+		<ul>
+			<%blogs.forEach( function(item, index) {%>
+					<li><a href="/user/blog/<%= item.id%>"><%= item.title%></a></li>
+			<%})%>
+		</ul>
+	</div>
+</body>
+<%include ../common/script.ejs%>
+</html>

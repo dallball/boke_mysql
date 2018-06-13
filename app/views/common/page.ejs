@@ -1,0 +1,41 @@
+<nav aria-label="Page navigation">
+	<ul class="pagination">
+		<%if (currentPage == 1) {%>
+			<li class="disabled">
+			  	<a href="javascript:;" aria-label="Previous">
+			    	<span aria-hidden="true">&laquo;</span>
+			  	</a>
+			</li>
+		<%} else{%>
+			<li>
+			  	<a href="<%=api%>?pageIndex=<%=currentPage-1%>" aria-label="Previous">
+			    	<span aria-hidden="true">&laquo;</span>
+			  	</a>
+			</li>
+		<%}%>
+		
+
+		<%for (var i = 1; i <= totalPage; i++) {%>
+			<%if (i == currentPage) {%>
+				<li class="active"><a href="javascript:;"><%=currentPage%></a></li>
+			<%} else{%>
+				<li><a href="<%=api%>?pageIndex=<%=i%>"><%=i%></a></li>
+			<%}%>
+		<%}%>
+
+		<%if (currentPage == totalPage) {%>
+			<li class="disabled">
+			  	<a href="javascript:;" aria-label="Next">
+			    	<span aria-hidden="true">&raquo;</span>
+			  	</a>
+			</li>
+		<%} else {%>
+			<li>
+			  	<a href="<%=api%>?pageIndex=<%=currentPage+1%>" aria-label="Next">
+			    	<span aria-hidden="true">&raquo;</span>
+			  	</a>
+			</li>
+		<%}%>
+		<li style="height: 34px; line-height:34px; margin-left:10px; display: inline-block;">共<%= totalLength%>条</li>
+	</ul>
+</nav>

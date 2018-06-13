@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%include ../common/head.ejs%>
+</head>
+<body>
+	<%include ../common/top.ejs%>
+	<div class="container">
+		<h1>
+			<%= blog.title%> <span class="fw400 color-999 fs-16">(<%= moment(blog.updated_at).format('YYYY-MM-DD HH:mm:ss')%>， by <span class="color-333 fs-18"><%= blog.user.user_name%></span>)</span>
+			<%if(user){%>
+				<%if(user.id===blog.user.id){%>
+					<a href="/user/write?bid=<%=blog.id%>" class="btn btn-primary">修改</a>
+				<%}%>
+			<%}%>
+		</h1>
+		<p><%= blog.content%></p>
+	</div>
+</body>
+<%include ../common/script.ejs%>
+</html>

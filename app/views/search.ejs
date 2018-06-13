@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%include ./common/head.ejs%>
+<style>
+	.search-list{margin-top: 50px;}
+	.search-list li{margin-top: 15px;}
+</style>
+</head>
+<body>
+	<%include ./common/top.ejs%>
+	<div class="container">
+		<ul class="search-list">
+			<%if (showType === 'blog') {%>
+				<% blogs.forEach(function (item, index) {%>
+					<li>
+						<a href="/user/blog/<%=item.id%>"><%-item.title%></a>
+						<span class="color-999 fs-14">
+						(<%=item.change%> <%=moment(item.updated_at).format('YYYY-MM-DD')%>，by <span class="fs-16 color-333"><a href="/user/user/<%=item.user.id%>"><%=item.user.user_name%></a></span>)
+						</span>
+					</li>
+				<%})%>
+			<%} else {%>
+				<% users.forEach(function (item, index) {%>
+					<li>
+						<a href="/user/user/<%=item.id%>"><%-item.user_name%></a>
+						<span class="color-999 fs-14">
+						(注册于<%=moment(item.created_at).format('YYYY-MM-DD')%>)
+						</span>
+					</li>
+				<%})%>
+			<%}%>
+		</ul>
+	</div>
+</body>
+<%include ./common/script.ejs%>
+</html>

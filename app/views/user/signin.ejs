@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%include ../common/head.ejs%>
+</head>
+<body>
+	<%include ../common/top.ejs%>
+	<div class="container">
+		<form id="signinForm" class="form-horizontal mt-30">
+			<div class="form-group">
+				<label for="username" class="col-sm-2 control-label">用户名</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="username" name="user[user_name]" placeholder="用户名">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="password" class="col-sm-2 control-label">密码</label>
+				<div class="col-sm-10">
+					<input type="password" class="form-control" id="password" name="user[password]" placeholder="密码">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="verifycode" class="col-sm-2 control-label">图片验证码</label>
+				<div class="col-sm-5">
+					<input type="text" class="form-control" id="verifycode" name="user[verifycode]" placeholder="图片验证码">
+				</div>
+				<div class="col-sm-5">
+					<!-- <img id="verifycodeImg" src="" alt=""> -->
+					<div id="verifycodeImg"></div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="button" id="signinBtn" class="btn btn-warning">登录</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+<%include ../common/script.ejs%>
+<script>
+	$(function () {
+		$('#signinBtn').on('click', function() {
+			var data = $('#signinForm').serializeArray()
+			data = new ToJson(data)
+
+			$.ajax({
+				url: '/user/signin',
+				type: 'POST',
+				dataType: 'json',
+				data: data,
+				success: function (res) {
+					if (res.status == 0) {
+						location.href = '/main'
+					} else {
+						alert(res.msg)
+					}
+				}
+			})
+		});
+
+		getCaptchas(function (res) {
+			// $('#verifycodeImg').attr('src', res.img)
+			$('#verifycodeImg').html(res.img)
+		})
+
+		$('#verifycodeImg').on('click', function() {
+			let _this = this
+			getCaptchas(function (res) {
+				// $(_this).attr('src', res.img)
+				$(_this).html(res.img)
+			})
+		});
+	})
+</script>
+</html>

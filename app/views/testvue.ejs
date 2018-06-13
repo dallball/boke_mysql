@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%include ./common/head.ejs%>
+<style>
+	#app1{padding: 60px 0;}
+	.contact-list{margin-top: 50px;}
+	.contact-list li{margin-top: 15px;}
+	.red{color: red;}
+	.fs-18{font-size: 18px;}
+</style>
+</head>
+<body>
+	<%include ./common/top.ejs%>
+	<div class="container">
+		<div id="app1">
+			<div>{{msg}}</div>
+			<h3 v-bind:title="title">hover看title</h3>
+			<div v-if="seen">you can see me now!</div>
+			<ul>
+				<li v-for="item in persons">{{item.name}}，{{item.age}}岁，性别{{item.sex}}</li>
+			</ul>
+			<br><br>
+			<button type="button" v-on:click="loveCoi">click me!</button>
+			<br><br>
+			<ul>
+				<person-item v-for="item in persons" v-bind:person="item" v-bind:id="'p'+item.id"></person-item>
+			</ul>
+			<ul>
+				<li>双大括号：{{rawHtml}}</li>
+				<li>解析成html：<span v-html="rawHtml"></span></li>
+			</ul>
+			<br>
+			<h3>表达式用法</h3>
+			<br>
+			<p>简单运算：{{number+1}}</p>
+			<p>三目运算：{{number === 100? 'number是100': 'number不是100'}}</p>
+			<p>计算属性：{{computedNumber}}, 计算属性computed 有缓存，开销小</p>
+			<p>直接调用方法：{{kauFan()}}</p>
+			<h3>{{msg}}</h3>
+			<input type="text" v-model="inputMsg">
+			<h3>样式</h3>
+			<p class="fs-18" v-bind:class="{red: isred}">v-bind:class————coi suk jan si ngo lou po</p>
+			<div v-bind:style="{color: '#f90', 'font-size': '24px'}">v-bind:style————coi suk jan ngo han oi nei</div>
+			<h3>条件渲染</h3>
+			<template v-if="ifNum === 0">
+				<p>ifNum === 0</p>
+				<p>coi suk jan si ngo lou po</p>
+				<p>coi suk jan wai ngo sang hoi zi</p>
+			</template>
+			<template v-if="ifNum === 1">
+				<p>ifNum === 1</p>
+				<p>coi suk jan si ngo lou po</p>
+				<p>coi suk jan wai ngo sang hoi zi</p>
+			</template>
+			<template v-else>
+				<p>ifNum === else</p>
+				<p>coi suk jan si ngo dik</p>
+			</template>
+			<h3>对象遍历</h3>
+			<ul>
+				<li v-for="(value, key, index) of person">{{key}}: {{value}}</li>
+			</ul>
+			<h3>vue 更改数组的方式：</h3>
+			<p>Vue.set(vm.items, indexOfItem, newValue)</p>
+			<h3>vue 添加对象属性的方式：</h3>
+			<p>Vue.set(vm.obj, key, value)</p>
+			<h3>事件</h3>
+			<div>
+				<p>主动触发用于子组件向父组件传递信息</p>
+				<p>{{saywords}}</p>
+				<button-item v-on:saysth="saySomething"></button-item>
+			</div>
+			<h3>表单</h3>
+			<div>
+				<input type="checkbox" id="jack" value="Jack13" v-model="checkedNames">
+				<label for="jack">Jack12</label>
+				<input type="checkbox" id="john" value="John" v-model="checkedNames">
+				<label for="john">John</label>
+				<input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+				<label for="mike">Mike</label>
+				<br>
+				<span>Checked names: {{ checkedNames }}</span>
+			</div>
+		 	<div>
+				<input type="radio" id="one" value="One" v-model="picked">
+				<label for="one">One</label>
+				<br>
+				<input type="radio" id="two" value="Two" v-model="picked">
+				<label for="two">Two</label>
+				<br>
+				<span>Picked: {{ picked }}</span>
+		 	</div>
+		 	<div>
+		 		<select v-model="selected">
+					<option disabled value="">请选择</option>
+					<option value="1">A</option>
+					<option value="2">B</option>
+					<option value="3">C</option>
+				</select>
+				<span>Selected: {{ selected }}</span>
+		 	</div>
+		 	<h3>组件</h3>
+		 	<p>组件props 可以用 字符串数组，也可以用对象字面量，字面量可用于验证prop</p>
+		</div>
+	</div>
+</body>
+<%include ./common/script.ejs%>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script>
+	Vue.component('person-item', {
+		props: ['person'],
+		template: '<li id="">{{person.id}}. {{person.name}}，{{person.age}}岁，性别{{person.sex}}</li>'
+	})
+	Vue.component('button-item', {
+		props: [],
+		template: '<button v-on:click="$emit(\'saysth\')">主动触发事件</button>'
+	})
+	var vm = new Vue({
+		el: '#app1',
+		data: {
+			msg: 'hello world!',
+			title: 'bind Title',
+			seen: true,
+			isred: true,
+			person: {
+				name: 'cansing',
+				loupo: 'coisukjan'
+			},
+			persons: [
+				{id:0, name: '小明', age: 19, sex: '男'},
+				{id:1, name: '小红', age: 18, sex: '女'},
+				{id:2, name: 'CoiSukJan', age: 18, sex: '女'},
+				{id:3, name: 'Cansing', age: 20, sex: '男'}
+			],
+			rawHtml: '<span style="color: red">this should be red.</span>',
+			number: 100,
+			inputMsg: 'ngo oi coi suk jan.',
+			ifNum: 1,
+			saywords:'123',
+			checkedNames: [],
+			picked:'',
+			selected:''  //	也可以是数组
+		},
+		computed: {
+			computedNumber: function () {
+				return this.number*9999-12345
+			}
+		},
+		methods: {
+			loveCoi: function () {
+				this.msg = 'NGo Oi Coi Suk Jan!'
+			},
+			kauFan: function () {
+				return 'suk Jan, Gaa Kap NGo Baa!'
+			},
+			saySomething: function () {
+				this.saywords = 'suk jan ngo oi nei!!!'
+			}
+		},
+		watch: {
+			// 侦听属性
+			inputMsg: function (val) {
+				this.msg = val + '!!!'
+			}
+		}
+	})
+</script>
+</html>
