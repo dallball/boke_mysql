@@ -8,7 +8,7 @@
             "env": {
             	"mode": "development"
             },
-            "port": 3000,
+            "port": 3001,
             "watch": true,
             "ignore_watch": [".git", ".gitignore", "node_modules", "logs", "test", "doc", "public", "deploy", "sftp-config.json"]
         }
