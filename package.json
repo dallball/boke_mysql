@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "build-doc-dev": "apidoc -c ./apidoc/dev -i ./app/controllers/ -o ./public/doc; node ./apidoc/apidoc-sample-request.js",
+    "dev": "pm2 start deploy/pm2.json --only bokhak_mysql-dev"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -19,5 +21,8 @@
     "sequelize": "^4.37.10",
     "serve-favicon": "~2.3.0",
     "svg-captcha": "^1.3.11"
+  },
+  "devDependencies": {
+    "apidoc": "^0.17.6"
   }
 }

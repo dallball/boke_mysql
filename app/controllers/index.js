@@ -24,7 +24,7 @@ class Index extends BaseComponent {
 			let pageSize = 10
 
 			let p1 = User.findAll()
-			let p2 = Blog.findAndCountAll({include: [{model: User}], offset: (pageIndex-1)*pageSize, limit: pageSize})
+			let p2 = Blog.findAndCountAll({include: [{model: User}], offset: (pageIndex-1)*pageSize, limit: pageSize, order: [['updated_at', 'DESC']]}) 
 			let [_users, _blogs] = await Promise.all([p1, p2])
 			_blogs.rows.forEach( function(item, index) {
 				item.change = Number(item.updated_at) === Number(item.created_at)?'创建于':'修改于';

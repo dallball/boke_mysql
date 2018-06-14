@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50556
 File Encoding         : 65001
 
-Date: 2018-06-13 18:28:53
+Date: 2018-06-14 15:36:43
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,10 +37,10 @@ CREATE TABLE `blog` (
 -- ----------------------------
 -- Records of blog
 -- ----------------------------
-INSERT INTO `blog` VALUES ('1', 'title1-update', '发射点发生发生123fsdf发射点发生发生123fsdf发射点发生发生123fsdf发射点发生发生123fsdf发射点发生发生123fsdf发射点发生发生123fsdf发射点发生发生123fsdf-update', '3', null, '2018-06-12 15:02:00', '2018-06-12 16:23:58');
-INSERT INTO `blog` VALUES ('2', 'title23', 'asdfasdfasdfasdfasdfasdfasdf', '3', null, '2018-06-12 15:26:13', '2018-06-12 15:26:13');
-INSERT INTO `blog` VALUES ('4', 'test3-update', 'asfadfasdfasdf-update', '3', null, '2018-06-12 16:25:58', '2018-06-12 16:26:22');
-INSERT INTO `blog` VALUES ('5', 'test4', '123123sdfasdff', '3', null, '2018-06-13 10:51:44', '2018-06-13 10:51:44');
+INSERT INTO `blog` VALUES ('1', 'title1-update', '发射点发生发生123fsdf发射点发生发生123fsdf发射点发生发生123fsdf发射点发生发生123fsdf发射点发生发生123fsdf发射点发生发生123fsdf发射点发生发生123fsdf-update', '3', '2', '2018-06-12 15:02:00', '2018-06-12 16:23:58');
+INSERT INTO `blog` VALUES ('2', 'title0-update', 'asdfasdfasdfasdfasdfasdfasdf', '3', '1', '2018-06-12 15:26:13', '2018-06-14 11:24:34');
+INSERT INTO `blog` VALUES ('4', 'test3-update', 'asfadfasdfasdf-update', '3', '2', '2018-06-12 16:25:58', '2018-06-12 16:26:22');
+INSERT INTO `blog` VALUES ('5', 'test4', '123123sdfasdff', '3', '1', '2018-06-13 10:51:44', '2018-06-13 10:51:44');
 INSERT INTO `blog` VALUES ('6', 'test5-update', 'test5暗灰色的test5暗灰色的test5暗灰色的test5暗灰色的test5暗灰色的test5暗灰色的test5暗灰色的', '3', '2', '2018-06-13 11:21:34', '2018-06-13 11:30:34');
 INSERT INTO `blog` VALUES ('7', 'test6', '华硕敦化市更多华硕敦化市东方', '2', '1', '2018-06-13 11:32:44', '2018-06-13 11:32:44');
 INSERT INTO `blog` VALUES ('8', 'test8', '压缩敦化市华硕敦化市东方', '3', '1', '2018-06-13 11:45:49', '2018-06-13 11:45:49');
@@ -88,5 +88,5 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('2', 'test', '4297f44b13955235245b2497399d7a93', '20', '2018-06-08 15:11:46', '2018-06-08 15:11:46');
-INSERT INTO `user` VALUES ('3', 'test1', '4297f44b13955235245b2497399d7a93', '20', '2018-06-11 15:04:45', '2018-06-11 15:04:45');
+INSERT INTO `user` VALUES ('2', 'user1', '4297f44b13955235245b2497399d7a93', '20', '2018-06-08 15:11:46', '2018-06-08 15:11:46');
+INSERT INTO `user` VALUES ('3', 'user2', '4297f44b13955235245b2497399d7a93', '20', '2018-06-11 15:04:45', '2018-06-11 15:04:45');

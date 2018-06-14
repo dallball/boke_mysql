@@ -1,0 +1,32 @@
+{
+    "user": {
+        "role": {
+            "admin": {
+                "val": 80,
+                "title": "管理员"
+            },
+            "general": {
+                "val": 20,
+                "title": "一般用户"
+            }
+        }
+    },
+    "resultCode": {
+        "common": {
+            "success": 0,
+            "fail": 1,
+            "unknowError": 2,
+            "paramsInvalid": 3,
+            "wrongHandle": 4
+        },
+        "need":{
+            "login": 201001,
+            "admin": 201002
+        },
+        "auth": {
+            "passwordWrong": 101001,
+            "userInexistence": 101002,
+            "phoneInexistence": 101003
+        }
+    }
+}

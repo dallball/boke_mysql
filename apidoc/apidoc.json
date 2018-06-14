@@ -1,0 +1,8 @@
+{
+    "name": "bokhak_mysql",
+    "version": "0.1.0",
+    "description": "Description of bokhak_mysql",
+    "title": "api doc - bokhak_mysql",
+    "url": "http://127.0.0.1:3000",
+    "sampleUrl":"http://127.0.0.1:3000"
+}

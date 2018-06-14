@@ -1,0 +1,16 @@
+{
+    "apps": [
+        {
+            "name": "bokhak_mysql-dev",
+            "script": "./bin/www",
+            "out_file": "./logs/pm2-out.log",
+            "error_file": "./logs/pm2-error.log",
+            "env": {
+            	"mode": "development"
+            },
+            "port": 3000,
+            "watch": true,
+            "ignore_watch": [".git", ".gitignore", "node_modules", "logs", "test", "doc", "public", "deploy", "sftp-config.json"]
+        }
+    ]
+}
